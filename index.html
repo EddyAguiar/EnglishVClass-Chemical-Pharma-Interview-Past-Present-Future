@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="English VClass — Aula • Chemical & Pharma Job Interview Preparation">
+<title>English VClass • Aula • Chemical & Pharma Interview Prep</title>
+<style>
+:root{
+  --primary:#123c69;
+  --secondary:#1f7a8c;
+  --accent:#f4b942;
+  --light:#f4f7fb;
+  --dark:#17202a;
+  --muted:#667085;
+  --green:#16803c;
+  --green-bg:#eaf7ee;
+  --red:#c62828;
+  --red-bg:#fdecec;
+  --white:#fff;
+  --shadow:0 8px 24px rgba(18,60,105,.10);
+  --radius:18px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--light);
+  color:var(--dark);
+  line-height:1.6;
+}
+header{
+  background:linear-gradient(135deg,var(--primary),var(--secondary));
+  color:white;
+  padding:28px 16px 34px;
+}
+.header-inner{max-width:980px;margin:auto}
+.brand{font-weight:800;letter-spacing:.5px;font-size:1.05rem}
+header h1{font-size:clamp(1.8rem,5vw,3rem);line-height:1.15;margin:12px 0 8px}
+header p{margin:0;opacity:.95;font-size:1rem}
+.progress-wrap{margin-top:22px;background:rgba(255,255,255,.2);border-radius:99px;height:10px;overflow:hidden}
+.progress{width:10%;height:100%;background:var(--accent);border-radius:99px;transition:width .5s ease}
+nav{
+  position:sticky;top:0;z-index:20;
+  background:white;border-bottom:1px solid #e5e7eb;
+  overflow-x:auto;white-space:nowrap;
+}
+nav .nav-inner{max-width:980px;margin:auto;display:flex}
+nav a{
+  display:inline-block;padding:12px 14px;color:var(--primary);
+  text-decoration:none;font-weight:700;font-size:.9rem;
+}
+nav a.done::after{content:" ✓";color:var(--green);font-weight:800}
+main{max-width:980px;margin:auto;padding:20px 14px 50px}
+.card{
+  background:white;border-radius:var(--radius);padding:22px;
+  margin:18px 0;box-shadow:var(--shadow);
+}
+.card h2{color:var(--primary);margin-top:0;font-size:1.45rem}
+.card h3{color:var(--secondary);margin-bottom:8px}
+.badge{
+  display:inline-block;background:#e8f2fb;color:var(--primary);
+  padding:5px 10px;border-radius:999px;font-size:.8rem;font-weight:800;
+}
+.goal-list{padding-left:20px}
+.goal-list li{margin:7px 0}
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:420px}
+th,td{padding:12px;border-bottom:1px solid #e8ebef;text-align:left}
+th{background:#eef4fa;color:var(--primary)}
+.example{
+  background:#f8fafc;border-left:5px solid var(--secondary);
+  padding:13px 15px;margin:12px 0;border-radius:8px;
+}
+.example-audio{
+  display:flex;gap:6px;margin-top:8px;flex-wrap:wrap;
+}
+.audio-btn{
+  background:#eaf0f6;border:1px solid #d0d9e6;
+  border-radius:30px;padding:4px 12px;font-size:.75rem;
+  font-weight:700;color:var(--primary);cursor:pointer;
+  display:inline-flex;align-items:center;gap:4px;transition:.15s;
+}
+.audio-btn:hover{background:#d0d9e6}
+.audio-btn.playing{background:var(--secondary);color:white;border-color:var(--secondary)}
+.en{font-weight:700;color:var(--primary)}
+.pt{color:var(--muted)}
+.tip{
+  background:#fff8e7;border-left:5px solid var(--accent);
+  padding:14px;border-radius:8px;margin-top:14px;
+}
+.exercise{
+  border:1px solid #e3e8ef;border-radius:14px;padding:16px;margin:14px 0;
+}
+input[type="text"],textarea,select{
+  width:100%;padding:12px;border:1px solid #ccd5df;border-radius:10px;
+  font:inherit;background:white;
+}
+textarea{min-height:110px;resize:vertical}
+button{
+  border:0;border-radius:12px;padding:12px 17px;
+  background:var(--primary);color:white;font-weight:800;
+  cursor:pointer;font-size:1rem;
+}
+button:hover{filter:brightness(1.08)}
+button.secondary{background:var(--secondary)}
+button.light{background:#eaf0f6;color:var(--primary)}
+.feedback{
+  margin-top:10px;padding:11px;border-radius:10px;font-weight:700;display:none;
+}
+.feedback.correct{display:block;background:var(--green-bg);color:var(--green)}
+.feedback.wrong{display:block;background:var(--red-bg);color:var(--red)}
+.option{
+  display:block;width:100%;text-align:left;margin:8px 0;
+  background:#f5f7fa;color:var(--dark);border:1px solid #dce2e9;
+}
+.option.correct{background:var(--green-bg);border-color:#9ed7ae;color:var(--green)}
+.option.wrong{background:var(--red-bg);border-color:#efaaaa;color:var(--red)}
+.option:disabled{cursor:default;opacity:1}
+.score{
+  text-align:center;background:#eef4fa;border-radius:16px;padding:20px;
+  margin-top:20px;
+}
+.score strong{font-size:2.2rem;color:var(--primary)}
+.audio-box{
+  text-align:center;background:#f5f8fb;border-radius:15px;padding:20px;
+}
+#transcript{display:none;margin-top:15px}
+.speaking-card{
+  background:linear-gradient(135deg,#f5f8fb,#ffffff);
+  border:1px solid #e0e7ef;
+}
+footer{
+  text-align:center;margin-top:30px;padding:28px 15px;
+  color:#777;background:white;border-top:1px solid #e5e7eb;
+}
+footer .copyright{font-weight:700}
+.small{font-size:.88rem;color:var(--muted)}
+.hidden{display:none}
+@media(max-width:600px){
+  header{padding-top:23px}
+  .card{padding:18px;margin:14px 0}
+  nav a{padding:11px 12px;font-size:.82rem}
+  button{width:100%;margin-top:5px}
+  .audio-btn{width:auto;margin-top:0}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="brand">English VClass • Edson D'Aguiar</div>
+    <h1>Aula — Chemical & Pharma Job Interview</h1>
+    <p>Most Asked Questions · Brazilian Regulators · Safety · Customer Service · Áudio US/UK</p>
+    <div class="progress-wrap" aria-label="Progresso da aula"><div class="progress" id="globalProgress"></div></div>
+    <p class="small" style="color:white;margin-top:8px"><span id="progressLabel">0</span>% concluído • Curso English Foundations • Módulo Interview Prep</p>
+  </div>
+</header>
+
+<nav aria-label="Navegação da aula">
+  <div class="nav-inner">
+    <a href="#objetivos" data-section="objetivos">Objetivos</a>
+    <a href="#questions" data-section="questions">Questions</a>
+    <a href="#vocab" data-section="vocab">Vocabulary</a>
+    <a href="#regulators" data-section="regulators">Regulators</a>
+    <a href="#safety" data-section="safety">Safety</a>
+    <a href="#service" data-section="service">Service</a>
+    <a href="#exercises" data-section="exercises">Exercises</a>
+    <a href="#listening" data-section="listening">Listening</a>
+    <a href="#quiz" data-section="quiz">Quiz</a>
+  </div>
+</nav>
+
+<main>
+
+<section class="card" id="objetivos">
+  <span class="badge">B1–B2 • INTERMEDIATE</span>
+  <h2>🎯 Objetivos da aula</h2>
+  <p>Ao terminar esta aula, você deverá ser capaz de:</p>
+  <ul class="goal-list">
+    <li>Responder às <strong>most asked interview questions</strong> na indústria química e farmacêutica.</li>
+    <li>Usar vocabulário técnico em inglês (<em>compliance, raw material, batch, deviation, CAPA</em>).</li>
+    <li>Falar sobre <strong>reguladores brasileiros</strong>: ANVISA, IBAMA, ABIQUIM, MAPA.</li>
+    <li>Descrever procedimentos de <strong>segurança e emergência</strong> (SESMT, PAE, FISPQ, HAZOP).</li>
+    <li>Responder perguntas sobre <strong>atendimento ao cliente</strong> e gestão de reclamações.</li>
+    <li>Fazer uma apresentação profissional em inglês sobre sua experiência.</li>
+  </ul>
+</section>
+
+<section class="card" id="questions">
+  <h2>📘 1. Most Asked Interview Questions — Chemical & Pharma</h2>
+  <p>Estas são as perguntas mais frequentes em entrevistas para multinacionais químicas e farmacêuticas operando no Brasil. Estude as respostas modelo e adapte à sua experiência.</p>
+
+  <h3>💼 Behavioural & Personal Questions</h3>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Question</th><th>Model Answer (English)</th><th>Áudio</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Tell me about yourself.</strong></td>
+          <td>I am a chemical engineer with 5 years of experience in process optimization and quality control. I have worked extensively with HAZOP studies, batch production, and regulatory compliance. I am passionate about safety and continuous improvement.</td>
+          <td><div class="example-audio">
+            <button class="audio-btn" data-phrase="I am a chemical engineer with 5 years of experience in process optimization and quality control. I have worked extensively with HAZOP studies, batch production, and regulatory compliance. I am passionate about safety and continuous improvement." data-accent="us">🇺🇸 US</button>
+            <button class="audio-btn" data-phrase="I am a chemical engineer with 5 years of experience in process optimization and quality control. I have worked extensively with HAZOP studies, batch production, and regulatory compliance. I am passionate about safety and continuous improvement." data-accent="uk">🇬🇧 UK</button>
+          </div></td>
+        </tr>
+        <tr>
+          <td><strong>Why do you want to work here?</strong></td>
+          <td>I admire your company's commitment to sustainable chemistry and innovation. I want to contribute to projects that align with my values and to grow professionally in a global environment.</td>
+          <td><div class="example-audio">
+            <button class="audio-btn" data-phrase="I admire your company's commitment to sustainable chemistry and innovation. I want to contribute to projects that align with my values and to grow professionally in a global environment." data-accent="us">🇺🇸 US</button>
+            <button class="audio-btn" data-phrase="I admire your company's commitment to sustainable chemistry and innovation. I want to contribute to projects that align with my values and to grow professionally in a global environment." data-accent="uk">🇬🇧 UK</button>
+          </div></td>
+        </tr>
+        <tr>
+          <td><strong>What is your greatest strength?</strong></td>
+          <td>My greatest strength is my ability to solve complex problems systematically. I use data-driven approaches and collaborate with cross-functional teams to find safe and efficient solutions.</td>
+          <td><div class="example-audio">
+            <button class="audio-btn" data-phrase="My greatest strength is my ability to solve complex problems systematically. I use data-driven approaches and collaborate with cross-functional teams to find safe and efficient solutions." data-accent="us">🇺🇸 US</button>
+            <button class="audio-btn" data-phrase="My greatest strength is my ability to solve complex problems systematically. I use data-driven approaches and collaborate with cross-functional teams to find safe and efficient solutions." data-accent="uk">🇬🇧 UK</button>
+          </div></td>
+        </tr>
+        <tr>
+          <td><strong>Tell me about a time you faced a difficult problem.</strong></td>
+          <td>In my previous role, we had a batch failure due to raw material contamination. I isolated the affected batch, coordinated with the lab to identify the root cause, and implemented a new supplier qualification protocol. The issue was resolved within 48 hours, and we prevented recurrence.</td>
+          <td><div class="example-audio">
+            <button class="audio-btn" data-phrase="In my previous role, we had a batch failure due to raw material contamination. I isolated the affected batch, coordinated with the lab to identify the root cause, and implemented a new supplier qualification protocol. The issue was resolved within 48 hours, and we prevented recurrence." data-accent="us">🇺🇸 US</button>
+            <button class="audio-btn" data-phrase="In my previous role, we had a batch failure due to raw material contamination. I isolated the affected batch, coordinated with the lab to identify the root cause, and implemented a new supplier qualification protocol. The issue was resolved within 48 hours, and we prevented recurrence." data-accent="uk">🇬🇧 UK</button>
+          </div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 style="margin-top:24px">🔬 Technical Questions</h3>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Question</th><th>Model Answer (English)</th><th>Áudio</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>What is HAZOP and why is it important?</strong></td>
+          <td>HAZOP stands for Hazard and Operability Study. It is a systematic technique to identify potential hazards in a process. It is critical for preventing accidents and ensuring regulatory compliance.</td>
+          <td><div class="example-audio">
+            <button class="audio-btn" data-phrase="HAZOP stands for Hazard and Operability Study. It is a systematic technique to identify potential hazards in a process. It is critical for preventing accidents and ensuring regulatory compliance." data-accent="us">🇺🇸 US</button>
+            <button class="audio-btn" data-phrase="HAZOP stands for Hazard and Operability Study. It is a systematic technique to identify potential hazards in a process. It is critical for preventing accidents and ensuring regulatory compliance." data-accent="uk">🇬🇧 UK</button>
+          </div></td>
+        </tr>
+        <tr>
+          <td><strong>How do you handle a deviation in a batch?</strong></td>
+          <td>I immediately stop the process and document the deviation. I perform a root cause analysis using tools like fishbone diagrams or 5 Whys. Then I implement a CAPA (Corrective and Preventive Action) to prevent recurrence.</td>
+          <td><div class="example-audio">
+            <button class="audio-btn" data-phrase="I immediately stop the process and document the deviation. I perform a root cause analysis using tools like fishbone diagrams or 5 Whys. Then I implement a CAPA, which is a Corrective and Preventive Action, to prevent recurrence." data-accent="us">🇺🇸 US</button>
+            <button class="audio-btn" data-phrase="I immediately stop the process and document the deviation. I perform a root cause analysis using tools like fishbone diagrams or 5 Whys. Then I implement a CAPA, which is a Corrective and Preventive Action, to prevent recurrence." data-accent="uk">🇬🇧 UK</button>
+          </div></td>
+        </tr>
+        <tr>
+          <td><strong>What is GMP and why does it matter?</strong></td>
+          <td>GMP stands for Good Manufacturing Practices. It ensures that products are consistently produced and controlled according to quality standards. It is a legal requirement for pharma and food industries in Brazil and worldwide.</td>
+          <td><div class="example-audio">
+            <button class="audio-btn" data-phrase="GMP stands for Good Manufacturing Practices. It ensures that products are consistently produced and controlled according to quality standards. It is a legal requirement for pharma and food industries in Brazil and worldwide." data-accent="us">🇺🇸 US</button>
+            <button class="audio-btn" data-phrase="GMP stands for Good Manufacturing Practices. It ensures that products are consistently produced and controlled according to quality standards. It is a legal requirement for pharma and food industries in Brazil and worldwide." data-accent="uk">🇬🇧 UK</button>
+          </div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tip">
+    <strong>💡 Pro Tip:</strong> Use the <strong>STAR method</strong> (Situation, Task, Action, Result) to structure your answers. It makes your responses clear and professional.
+  </div>
+</section>
+
+<section class="card" id="vocab">
+  <h2>🧠 2. Essential Vocabulary — Chemical & Pharma English</h2>
+  <p>Vocabulário técnico usado por multinacionais operando no Brasil. Domine estes termos para se comunicar com confiança.</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>English</th><th>Português</th><th>Áudio</th></tr></thead>
+      <tbody>
+        <tr><td>raw material</td><td>matéria-prima</td><td><div class="example-audio"><button class="audio-btn" data-phrase="raw material" data-accent="us">🇺🇸 US</button><button class="audio-btn" data-phrase="raw material" data-accent="uk">🇬🇧 UK</button></div></td></tr>
+        <tr><td>batch production</td><td>produção por lote</td><td><div class="example-audio"><button class="audio-btn" data-phrase="batch production" data-accent="us">🇺🇸 US</button><button class="audio-btn" data-phrase="batch production" data-accent="uk">🇬🇧 UK</button></div></td></tr>
+        <tr><td>deviation</td><td>desvio</td><td><div class="example-audio"><button class="audio-btn" data-phrase="deviation" data-accent="us">🇺🇸 US</button><button class="audio-btn" data-phrase="deviation" data-accent="uk">🇬🇧 UK</button></div></td></tr>
+        <tr><td>root cause analysis</td><td>análise de causa raiz</td><td><div class="example-audio"><button class="audio-btn" data-phrase="root cause analysis" data-accent="us">🇺🇸 US</button><button class="audio-btn" data-phrase="root cause analysis" data-accent="uk">🇬🇧 UK</button></div></td></tr>
+        <tr><td>CAPA (Corrective and Preventive Action)</td><td>Ação Corretiva e Preventiva</td><td><div class="example-audio"><button class="audio-btn" data-phrase="CAPA, Corrective and Preventive Action" data-accent="us">🇺🇸 US</button><button class="audio-btn" data-phrase="CAPA, Corrective and Preventive Action" data-accent="uk">🇬🇧 UK</button></div></td></tr>
+        <tr><td>compliance</td><td>conformidade / cumprimento</td><td><div class="example-audio"><button class="audio-btn" data-phrase="compliance" data-accent="us">🇺🇸 US</button><button class="audio-btn" data-phrase="compliance" data-accent="uk">🇬🇧 UK</button></div></td></tr>
+        <tr><td>regulatory affairs</td><td>assuntos regulatórios</td><td><div class="example-audio"><button class="audio-btn" data-phrase="regulatory affairs" data-accent="us">🇺🇸 US</button><button class="audio-btn" data-phrase="regulatory affairs" data-accent="uk">🇬🇧 UK</button></div></td></tr>
+        <tr><td>Good Manufacturing Practices (GMP)</td><td>Boas Práticas de Fabricação</td><td><div class="example-audio"><button class="audio-btn" data-phrase="Good Manufacturing Practices" data-accent="us">🇺🇸 US</button><button class="audio-btn" data-phrase="Good Manufacturing Practices" data-accent="uk">🇬🇧 UK</button></div></td></tr>
+        <tr><td>safety data sheet (SDS/FISPQ)</td><td>Ficha de Informações de Segurança de Produtos Químicos</td><td><div class="example-audio"><button class="audio-btn" data-phrase="Safety Data Sheet, also known as FISPQ" data-accent="us">🇺🇸 US</button><button class="audio-btn" data-phrase="Safety Data Sheet, also known as FISPQ" data-accent="uk">🇬🇧 UK</button></div></td></tr>
+        <tr><td>emergency response plan (PAE)</td><td>Plano de Atendimento a Emergências</td><td><div class="example-audio"><button class="audio-btn" data-phrase="emergency response plan" data-accent="us">🇺🇸 US</button><button class="audio-btn" data-phrase="emergency response plan" data-accent="uk">🇬🇧 UK</button></div></td></tr>
+        <tr><td>personal protective equipment (PPE/EPI)</td><td>Equipamento de Proteção Individual</td><td><div class="example-audio"><button class="audio-btn" data-phrase="personal protective equipment" data-accent="us">🇺🇸 US</button><button class="audio-btn" data-phrase="personal protective equipment" data-accent="uk">🇬🇧 UK</button></div></td></tr>
+        <tr><td>occupational health and safety (SESMT)</td><td>Segurança e Saúde no Trabalho</td><td><div class="example-audio"><button class="audio-btn" data-phrase="occupational health and safety" data-accent="us">🇺🇸 US</button><button class="audio-btn" data-phrase="occupational health and safety" data-accent="uk">🇬🇧 UK</button></div></td></tr>
+        <tr><td>customer complaint</td><td>reclamação de cliente</td><td><div class="example-audio"><button class="audio-btn" data-phrase="customer complaint" data-accent="us">🇺🇸 US</button><button class="audio-btn" data-phrase="customer complaint" data-accent="uk">🇬🇧 UK</button></div></td></tr>
+        <tr><td>supply chain</td><td>cadeia de suprimentos</td><td><div class="example-audio"><button class="audio-btn" data-phrase="supply chain" data-accent="us">🇺🇸 US</button><button class="audio-btn" data-phrase="supply chain" data-accent="uk">🇬🇧 UK</button></div></td></tr>
+        <tr><td>continuous improvement</td><td>melhoria contínua</td><td><div class="example-audio"><button class="audio-btn" data-phrase="continuous improvement" data-accent="us">🇺🇸 US</button><button class="audio-btn" data-phrase="continuous improvement" data-accent="uk">🇬🇧 UK</button></div></td></tr>
+        <tr><td>scale-up</td><td>escala de produção</td><td><div class="example-audio"><button class="audio-btn" data-phrase="scale-up" data-accent="us">🇺🇸 US</button><button class="audio-btn" data-phrase="scale-up" data-accent="uk">🇬🇧 UK</button></div></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="card" id="regulators">
+  <h2>🏛️ 3. Brazilian Board Regulators — Know Your Agencies</h2>
+  <p>Em entrevistas para multinacionais operando no Brasil, demonstre conhecimento sobre os órgãos reguladores locais. Estes são os principais:</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Acronym</th><th>Full Name</th><th>Role in Chemical/Pharma</th><th>Áudio</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>ANVISA</strong></td>
+          <td>Agência Nacional de Vigilância Sanitária</td>
+          <td>Regulates pharmaceuticals, cosmetics, medical devices, and sanitizing products. Responsible for GMP inspections and product registration.</td>
+          <td><div class="example-audio">
+            <button class="audio-btn" data-phrase="ANVISA is the Brazilian Health Regulatory Agency. It regulates pharmaceuticals, cosmetics, medical devices, and sanitizing products." data-accent="us">🇺🇸 US</button>
+            <button class="audio-btn" data-phrase="ANVISA is the Brazilian Health Regulatory Agency. It regulates pharmaceuticals, cosmetics, medical devices, and sanitizing products." data-accent="uk">🇬🇧 UK</button>
+          </div></td>
+        </tr>
+        <tr>
+          <td><strong>IBAMA</strong></td>
+          <td>Instituto Brasileiro do Meio Ambiente e dos Recursos Naturais Renováveis</td>
+          <td>Environmental licensing, chemical substance control, hazardous waste management, and emergency response coordination.</td>
+          <td><div class="example-audio">
+            <button class="audio-btn" data-phrase="IBAMA is the Brazilian Institute of Environment and Renewable Natural Resources. It handles environmental licensing and chemical substance control." data-accent="us">🇺🇸 US</button>
+            <button class="audio-btn" data-phrase="IBAMA is the Brazilian Institute of Environment and Renewable Natural Resources. It handles environmental licensing and chemical substance control." data-accent="uk">🇬🇧 UK</button>
+          </div></td>
+        </tr>
+        <tr>
+          <td><strong>ABIQUIM</strong></td>
+          <td>Associação Brasileira da Indústria Química</td>
+          <td>Industry association representing chemical companies. Coordinates CONASQ and promotes best practices in chemical safety.</td>
+          <td><div class="example-audio">
+            <button class="audio-btn" data-phrase="ABIQUIM is the Brazilian Chemical Industry Association. It represents chemical companies and promotes best practices." data-accent="us">🇺🇸 US</button>
+            <button class="audio-btn" data-phrase="ABIQUIM is the Brazilian Chemical Industry Association. It represents chemical companies and promotes best practices." data-accent="uk">🇬🇧 UK</button>
+          </div></td>
+        </tr>
+        <tr>
+          <td><strong>MAPA</strong></td>
+          <td>Ministério da Agricultura, Pecuária e Abastecimento</td>
+          <td>Regulates agricultural chemicals, fertilizers, and agrochemicals. Works with IBAMA and ANVISA for pesticide registration.</td>
+          <td><div class="example-audio">
+            <button class="audio-btn" data-phrase="MAPA is the Ministry of Agriculture, Livestock and Food Supply. It regulates agricultural chemicals and fertilizers." data-accent="us">🇺🇸 US</button>
+            <button class="audio-btn" data-phrase="MAPA is the Ministry of Agriculture, Livestock and Food Supply. It regulates agricultural chemicals and fertilizers." data-accent="uk">🇬🇧 UK</button>
+          </div></td>
+        </tr>
+        <tr>
+          <td><strong>ABNT</strong></td>
+          <td>Associação Brasileira de Normas Técnicas</td>
+          <td>Develops technical standards, including NBR 7195 (safety colors) and NBR 14725 (chemical labeling).</td>
+          <td><div class="example-audio">
+            <button class="audio-btn" data-phrase="ABNT is the Brazilian Association of Technical Standards. It develops standards like NBR 7195 for safety colors." data-accent="us">🇺🇸 US</button>
+            <button class="audio-btn" data-phrase="ABNT is the Brazilian Association of Technical Standards. It develops standards like NBR 7195 for safety colors." data-accent="uk">🇬🇧 UK</button>
+          </div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tip">
+    <strong>💡 Interview Insight:</strong> Quando perguntado sobre regulamentação, mencione <strong>ANVISA</strong> para produtos farmacêuticos e de saúde, <strong>IBAMA</strong> para questões ambientais e <strong>MAPA</strong> para produtos agrícolas. Mostrar que você conhece a divisão de responsabilidades impressiona recrutadores.
+  </div>
+</section>
+
+<section class="card" id="safety">
+  <h2>🦺 4. Safety & Emergency — Key Concepts</h2>
+  <p>Segurança e resposta a emergências são prioridades absolutas na indústria química e farmacêutica. Esteja preparado para responder perguntas sobre estes tópicos.</p>
+
+  <h3>🔴 Emergency Response (PAE / P2R2)</h3>
+  <div class="example">
+    <div class="en"><strong>PAE (Plano de Atendimento a Emergências)</strong> — Emergency Response Plan</div>
+    <div class="pt">Documento que define procedimentos para resposta a emergências químicas, incluindo vazamentos, incêndios e exposições.</div>
+    <div class="example-audio">
+      <button class="audio-btn" data-phrase="PAE is the Emergency Response Plan. It defines procedures for responding to chemical emergencies." data-accent="us">🇺🇸 US</button>
+      <button class="audio-btn" data-phrase="PAE is the Emergency Response Plan. It defines procedures for responding to chemical emergencies." data-accent="uk">🇬🇧 UK</button>
+    </div>
+  </div>
+
+  <div class="example">
+    <div class="en"><strong>P2R2</strong> — Plano Nacional de Prevenção, Preparação e Resposta Rápida a Emergências Ambientais com Produtos Químicos Perigosos</div>
+    <div class="pt">Plano nacional coordenado pelo IBAMA para emergências ambientais com produtos químicos perigosos. Baseado no princípio do poluidor-pagador.</div>
+    <div class="example-audio">
+      <button class="audio-btn" data-phrase="P2R2 is the National Plan for Prevention, Preparation and Rapid Response to Environmental Emergencies with Hazardous Chemical Products." data-accent="us">🇺🇸 US</button>
+      <button class="audio-btn" data-phrase="P2R2 is the National Plan for Prevention, Preparation and Rapid Response to Environmental Emergencies with Hazardous Chemical Products." data-accent="uk">🇬🇧 UK</button>
+    </div>
+  </div>
+
+  <div class="example">
+    <div class="en"><strong>Sistema de Comando de Incidentes (SCI)</strong> — Incident Command System</div>
+    <div class="pt">Ferramenta de gerenciamento de incidentes com estrutura organizacional integrada para emergências únicas ou múltiplas.</div>
+    <div class="example-audio">
+      <button class="audio-btn" data-phrase="SCI is the Incident Command System. It is a management tool with an integrated organizational structure for emergencies." data-accent="us">🇺🇸 US</button>
+      <button class="audio-btn" data-phrase="SCI is the Incident Command System. It is a management tool with an integrated organizational structure for emergencies." data-accent="uk">🇬🇧 UK</button>
+    </div>
+  </div>
+
+  <h3>🟡 Risk Analysis Techniques</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Technique</th><th>Full Name</th><th>Purpose</th><th>Áudio</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>HAZOP</strong></td>
+          <td>Hazard and Operability Study</td>
+          <td>Systematic identification of hazards in complex processes. Applied to new installations and modifications.</td>
+          <td><div class="example-audio">
+            <button class="audio-btn" data-phrase="HAZOP is a Hazard and Operability Study. It systematically identifies hazards in complex processes." data-accent="us">🇺🇸 US</button>
+            <button class="audio-btn" data-phrase="HAZOP is a Hazard and Operability Study. It systematically identifies hazards in complex processes." data-accent="uk">🇬🇧 UK</button>
+          </div></td>
+        </tr>
+        <tr>
+          <td><strong>APR</strong></td>
+          <td>Análise Preliminar de Risco</td>
+          <td>Preliminary Risk Analysis. Deep risk analysis technique that precedes more detailed techniques like HAZOP.</td>
+          <td><div class="example-audio">
+            <button class="audio-btn" data-phrase="APR is Preliminary Risk Analysis. It is a deep risk analysis technique that precedes more detailed studies like HAZOP." data-accent="us">🇺🇸 US</button>
+            <button class="audio-btn" data-phrase="APR is Preliminary Risk Analysis. It is a deep risk analysis technique that precedes more detailed studies like HAZOP." data-accent="uk">🇬🇧 UK</button>
+          </div></td>
+        </tr>
+        <tr>
+          <td><strong>FISPQ</strong></td>
+          <td>Ficha de Informações de Segurança de Produtos Químicos</td>
+          <td>Safety Data Sheet (SDS). Contains hazard information, handling procedures, and emergency measures.</td>
+          <td><div class="example-audio">
+            <button class="audio-btn" data-phrase="FISPQ is the Safety Data Sheet. It contains hazard information and emergency measures." data-accent="us">🇺🇸 US</button>
+            <button class="audio-btn" data-phrase="FISPQ is the Safety Data Sheet. It contains hazard information and emergency measures." data-accent="uk">🇬🇧 UK</button>
+          </div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>🟢 Personal Protective Equipment (EPI / PPE)</h3>
+  <div class="example">
+    <div class="en">Always wear appropriate PPE: gloves, goggles, lab coat, and respirator when handling hazardous chemicals.</div>
+    <div class="pt">Sempre use EPI adequado: luvas, óculos de proteção, jaleco e respirador ao manusear produtos químicos perigosos.</div>
+    <div class="example-audio">
+      <button class="audio-btn" data-phrase="Always wear appropriate PPE: gloves, goggles, lab coat, and respirator when handling hazardous chemicals." data-accent="us">🇺🇸 US</button>
+      <button class="audio-btn" data-phrase="Always wear appropriate PPE: gloves, goggles, lab coat, and respirator when handling hazardous chemicals." data-accent="uk">🇬🇧 UK</button>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="service">
+  <h2>🤝 5. Customer Service in Chemical & Pharma</h2>
+  <p>Atendimento ao cliente na indústria química e farmacêutica envolve comunicação técnica, resolução de problemas e conformidade regulatória. Esteja pronto para responder perguntas sobre como você lida com clientes.</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Question</th><th>Model Answer (English)</th><th>Áudio</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>How do you handle a customer complaint about product quality?</strong></td>
+          <td>I listen carefully to the customer, document the complaint, and initiate an investigation. I coordinate with the quality team to identify the root cause and implement corrective actions. I keep the customer informed throughout the process.</td>
+          <td><div class="example-audio">
+            <button class="audio-btn" data-phrase="I listen carefully to the customer, document the complaint, and initiate an investigation. I coordinate with the quality team to identify the root cause and implement corrective actions. I keep the customer informed throughout the process." data-accent="us">🇺🇸 US</button>
+            <button class="audio-btn" data-phrase="I listen carefully to the customer, document the complaint, and initiate an investigation. I coordinate with the quality team to identify the root cause and implement corrective actions. I keep the customer informed throughout the process." data-accent="uk">🇬🇧 UK</button>
+          </div></td>
+        </tr>
+        <tr>
+          <td><strong>How do you ensure clear communication with international clients?</strong></td>
+          <td>I use simple, direct language and avoid jargon when possible. I confirm understanding by asking clarifying questions. I also document all communication in writing to avoid misunderstandings.</td>
+          <td><div class="example-audio">
+            <button class="audio-btn" data-phrase="I use simple, direct language and avoid jargon when possible. I confirm understanding by asking clarifying questions. I also document all communication in writing to avoid misunderstandings." data-accent="us">🇺🇸 US</button>
+            <button class="audio-btn" data-phrase="I use simple, direct language and avoid jargon when possible. I confirm understanding by asking clarifying questions. I also document all communication in writing to avoid misunderstandings." data-accent="uk">🇬🇧 UK</button>
+          </div></td>
+        </tr>
+        <tr>
+          <td><strong>What is your approach to customer satisfaction?</strong></td>
+          <td>My approach is proactive. I anticipate customer needs, respond quickly to inquiries, and follow up after resolution. I believe that transparency and reliability build long-term partnerships.</td>
+          <td><div class="example-audio">
+            <button class="audio-btn" data-phrase="My approach is proactive. I anticipate customer needs, respond quickly to inquiries, and follow up after resolution. I believe that transparency and reliability build long-term partnerships." data-accent="us">🇺🇸 US</button>
+            <button class="audio-btn" data-phrase="My approach is proactive. I anticipate customer needs, respond quickly to inquiries, and follow up after resolution. I believe that transparency and reliability build long-term partnerships." data-accent="uk">🇬🇧 UK</button>
+          </div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tip">
+    <strong>💡 Key Phrases for Customer Service:</strong><br>
+    "I understand your concern." · "Let me investigate this immediately." · "I will keep you updated." · "Thank you for bringing this to our attention." · "We are committed to resolving this issue."
+  </div>
+</section>
+
+<section class="card" id="exercises">
+  <h2>✏️ 6. Exercises</h2>
+
+  <div class="exercise">
+    <h3>Exercise 1 — Choose the correct regulator</h3>
+    <p>Which agency regulates pharmaceutical products in Brazil?</p>
+    <select id="ex1">
+      <option value="">Choose an answer</option>
+      <option>IBAMA</option><option>ANVISA</option><option>MAPA</option>
+    </select>
+    <button class="secondary" onclick="checkEx1()">Check answer</button>
+    <div id="ex1fb" class="feedback"></div>
+  </div>
+
+  <div class="exercise">
+    <h3>Exercise 2 — Complete the sentence</h3>
+    <p>HAZOP stands for Hazard and ______ Study.</p>
+    <select id="ex2">
+      <option value="">Choose an answer</option>
+      <option>Operation</option><option>Operability</option><option>Operational</option>
+    </select>
+    <button class="secondary" onclick="checkEx2()">Check answer</button>
+    <div id="ex2fb" class="feedback"></div>
+  </div>
+
+  <div class="exercise">
+    <h3>Exercise 3 — Choose the correct term</h3>
+    <p>A document that contains hazard information and emergency measures is called ______.</p>
+    <select id="ex3">
+      <option value="">Choose an answer</option>
+      <option>CAPA</option><option>FISPQ</option><option>PAE</option>
+    </select>
+    <button class="secondary" onclick="checkEx3()">Check answer</button>
+    <div id="ex3fb" class="feedback"></div>
+  </div>
+
+  <div class="exercise">
+    <h3>Exercise 4 — Complete the sentence</h3>
+    <p>When a batch fails, we perform a ______ analysis to find the root cause.</p>
+    <select id="ex4">
+      <option value="">Choose an answer</option>
+      <option>root cause</option><option>customer</option><option>supply</option>
+    </select>
+    <button class="secondary" onclick="checkEx4()">Check answer</button>
+    <div id="ex4fb" class="feedback"></div>
+  </div>
+
+  <div class="exercise">
+    <h3>Exercise 5 — Put the words in order</h3>
+    <p><strong>experience / I / years / have / five / of</strong></p>
+    <input id="ex5" type="text" placeholder="Type the complete sentence">
+    <button class="secondary" onclick="checkEx5()">Check answer</button>
+    <div id="ex5fb" class="feedback"></div>
+  </div>
+
+  <div class="exercise">
+    <h3>Exercise 6 — Translate into English</h3>
+    <p>"Eu trabalho com conformidade regulatória e segurança de processos."</p>
+    <input id="ex6" type="text" placeholder="Type the English sentence">
+    <button class="secondary" onclick="checkEx6()">Check answer</button>
+    <div id="ex6fb" class="feedback"></div>
+  </div>
+</section>
+
+<section class="card" id="listening">
+  <h2>🎧 7. Listening Practice — Mock Interview</h2>
+  <p>Ouça a transcrição de uma entrevista simulada. Depois responda às perguntas.</p>
+
+  <div class="audio-box">
+    <button onclick="speakListening()">🔊 Play Listening</button>
+    <button class="light" onclick="toggleTranscript()">📄 Show / Hide Transcript</button>
+    <div id="transcript" class="example">
+      <div class="en">
+        Interviewer: Good morning. Thank you for coming. Could you tell me about yourself?
+        Candidate: Good morning. My name is Carla. I am a pharmacist with six years of experience in quality assurance and regulatory affairs. I have worked with ANVISA submissions, GMP compliance, and deviation investigations.
+        Interviewer: Very good. What do you know about our company?
+        Candidate: I know your company is a multinational pharmaceutical manufacturer operating in Brazil. You have a strong focus on safety and sustainability. I believe my experience with FISPQ documentation and emergency response plans would be valuable here.
+        Interviewer: How do you handle a customer complaint about a product?
+        Candidate: I document the complaint immediately and start a root cause analysis. I coordinate with the quality team and keep the customer informed throughout the process. We implement a CAPA to prevent recurrence.
+        Interviewer: Why do you want to work for us?
+        Candidate: I admire your commitment to innovation and continuous improvement. I want to grow professionally in a company that values safety and compliance. I am also eager to work with international teams.
+        Interviewer: Do you have any questions for us?
+        Candidate: Yes. How do you integrate ANVISA and IBAMA requirements into your daily operations? And what is the biggest challenge your team is facing right now?
+      </div>
+      <div class="pt">
+        Entrevistador: Bom dia. Obrigado por vir. Você poderia falar sobre você?
+        Candidata: Bom dia. Meu nome é Carla. Sou farmacêutica com seis anos de experiência em garantia da qualidade e assuntos regulatórios. Trabalhei com submissões à ANVISA, conformidade com GMP e investigações de desvios.
+        Entrevistador: Muito bom. O que você sabe sobre nossa empresa?
+        Candidata: Sei que sua empresa é uma fabricante farmacêutica multinacional operando no Brasil. Vocês têm um forte foco em segurança e sustentabilidade. Acredito que minha experiência com documentação FISPQ e planos de resposta a emergências seria valiosa aqui.
+        Entrevistador: Como você lida com uma reclamação de cliente sobre um produto?
+        Candidata: Documento a reclamação imediatamente e inicio uma análise de causa raiz. Coordeno com a equipe de qualidade e mantenho o cliente informado durante todo o processo. Implementamos um CAPA para prevenir recorrência.
+        Entrevistador: Por que você quer trabalhar conosco?
+        Candidata: Admiro o compromisso de vocês com inovação e melhoria contínua. Quero crescer profissionalmente em uma empresa que valoriza segurança e conformidade. Também estou ansiosa para trabalhar com equipes internacionais.
+        Entrevistador: Você tem alguma pergunta para nós?
+        Candidata: Sim. Como vocês integram os requisitos da ANVISA e do IBAMA nas operações diárias? E qual é o maior desafio que sua equipe está enfrentando agora?
+      </div>
+    </div>
+  </div>
+
+  <div class="exercise">
+    <h3>Listening Questions</h3>
+    <p><strong>1.</strong> What is Carla's profession?</p>
+    <select id="l1">
+      <option value="">Choose</option><option>Chemical Engineer</option><option>Pharmacist</option><option>Lab Technician</option>
+    </select>
+
+    <p><strong>2.</strong> How many years of experience does Carla have?</p>
+    <select id="l2">
+      <option value="">Choose</option><option>Four</option><option>Five</option><option>Six</option>
+    </select>
+
+    <p><strong>3.</strong> What regulatory agency submissions has Carla worked with?</p>
+    <select id="l3">
+      <option value="">Choose</option><option>IBAMA</option><option>ANVISA</option><option>MAPA</option>
+    </select>
+
+    <p><strong>4.</strong> What documentation does Carla mention?</p>
+    <select id="l4">
+      <option value="">Choose</option><option>PAE</option><option>FISPQ</option><option>HAZOP</option>
+    </select>
+
+    <p><strong>5.</strong> What does Carla do first when handling a customer complaint?</p>
+    <select id="l5">
+      <option value="">Choose</option><option>Call the manager</option><option>Document the complaint</option><option>Refund the customer</option>
+    </select>
+
+    <p><strong>6.</strong> What does Carla coordinate with?</p>
+    <select id="l6">
+      <option value="">Choose</option><option>The sales team</option><option>The quality team</option><option>The legal team</option>
+    </select>
+
+    <p><strong>7.</strong> What does Carla implement to prevent recurrence?</p>
+    <select id="l7">
+      <option value="">Choose</option><option>HAZOP</option><option>CAPA</option><option>PAE</option>
+    </select>
+
+    <p><strong>8.</strong> Why does Carla want to work for the company?</p>
+    <select id="l8">
+      <option value="">Choose</option><option>For the salary</option><option>Commitment to innovation and safety</option><option>To move to another country</option>
+    </select>
+
+    <p><strong>9.</strong> What does Carla ask about in her questions?</p>
+    <select id="l9">
+      <option value="">Choose</option><option>Vacation policy</option><option>ANVISA and IBAMA requirements</option><option>Training programs</option>
+    </select>
+
+    <p><strong>10.</strong> What is the last thing Carla asks about?</p>
+    <select id="l10">
+      <option value="">Choose</option><option>Salary</option><option>The biggest challenge the team faces</option><option>Office location</option>
+    </select>
+
+    <button class="secondary" onclick="checkListening()">Check Listening</button>
+    <div id="lfb" class="feedback"></div>
+  </div>
+</section>
+
+<section class="card speaking-card" id="speaking">
+  <h2>🗣️ 8. Speaking Practice — Mock Interview</h2>
+  <p>Agora é hora de praticar suas respostas de entrevista. Use as perguntas abaixo e grave-se falando em inglês.</p>
+
+  <div class="example">
+    <strong>Model Answer Structure (STAR Method):</strong><br>
+    <span class="en"><strong>S</strong>ituation: "In my previous role..." → <strong>T</strong>ask: "I was responsible for..." → <strong>A</strong>ction: "I implemented..." → <strong>R</strong>esult: "As a result, we achieved..."</span>
+  </div>
+
+  <h3>Practice Questions</h3>
+  <ol>
+    <li>Tell me about yourself.</li>
+    <li>Why do you want to work in the chemical/pharma industry?</li>
+    <li>What do you know about ANVISA and IBAMA?</li>
+    <li>How do you handle a deviation in a batch?</li>
+    <li>Tell me about a time you solved a difficult problem.</li>
+    <li>How do you handle a customer complaint?</li>
+    <li>What is your greatest strength?</li>
+    <li>Do you have any questions for us?</li>
+  </ol>
+
+  <textarea id="speakingNotes" placeholder="Escreva suas respostas aqui antes de falar..."></textarea>
+  <button onclick="saveSpeaking()">💾 Save My Practice</button>
+  <div id="speakFb" class="feedback"></div>
+</section>
+
+<section class="card" id="quiz">
+  <h2>🎮 9. Interactive Quiz</h2>
+  <p>10 questões sobre entrevistas na indústria química e farmacêutica. O feedback aparece imediatamente. <em>As questões são embaralhadas a cada tentativa.</em></p>
+
+  <div id="quizContainer"></div>
+
+  <div class="score">
+    <div>YOUR SCORE</div>
+    <strong id="score">0 / 10</strong>
+    <p id="scoreMessage">Complete o quiz para ver seu resultado.</p>
+    <button class="light" onclick="restartQuiz()">🔄 Restart Quiz</button>
+  </div>
+</section>
+
+<section class="card">
+  <h2>🏁 Lesson Challenge</h2>
+  <p>Sem consultar o conteúdo, tente responder em inglês:</p>
+  <div class="example">
+    <strong>"Good morning. My name is ______. I am a ______ with ______ years of experience in ______. I have worked with ______ and ______. I am passionate about safety and continuous improvement. I believe my experience with ______ would be valuable for your company."</strong>
+  </div>
+  <p class="small">Objetivo: produzir uma apresentação de 30-45 segundos para uma entrevista na indústria química ou farmacêutica.</p>
+</section>
+
+</main>
+
+<footer>
+  Inglês Profissional • Preparação para Exames • Cambridge • IELTS • TOEFL • Duolingo English Test (DET)<br>
+  <span class="copyright">© English VClass • Edson D'Aguiar</span>
+  • WhatsApp ➡️ <a href="https://wa.me/5541991725009" target="_blank" rel="noopener">Contato</a>
+</footer>
+
+<script>
+/* ---------- AUDIO ---------- */
+document.addEventListener('click', function(e) {
+  const btn = e.target.closest('.audio-btn');
+  if (!btn) return;
+  e.stopPropagation();
+  const phrase = btn.dataset.phrase;
+  const accent = btn.dataset.accent || 'us';
+  if (!phrase) return;
+
+  if (window.speechSynthesis) window.speechSynthesis.cancel();
+
+  const utterance = new SpeechSynthesisUtterance(phrase);
+  utterance.lang = accent === 'uk' ? 'en-GB' : 'en-US';
+  utterance.rate = 0.85;
+  utterance.pitch = 1.0;
+
+  const voices = window.speechSynthesis.getVoices();
+  if (voices.length > 0) {
+    const found = voices.find(v => v.lang.startsWith(accent === 'uk' ? 'en-GB' : 'en-US'));
+    if (found) utterance.voice = found;
+  }
+
+  btn.classList.add('playing');
+  utterance.onend = () => btn.classList.remove('playing');
+  utterance.onerror = () => btn.classList.remove('playing');
+  window.speechSynthesis.speak(utterance);
+});
+
+/* ---------- FEEDBACK HELPER ---------- */
+function setFeedback(id, correct, text){
+  const el=document.getElementById(id);
+  el.className='feedback '+(correct?'correct':'wrong');
+  el.textContent=(correct?'🟢 ':'🔴 ')+text;
+}
+
+/* ---------- PROGRESS ---------- */
+const SECTIONS = ['objetivos','questions','vocab','regulators','safety','service','exercises','listening','quiz'];
+const sectionState = {};
+SECTIONS.forEach(s => sectionState[s] = false);
+
+function markSectionDone(id){
+  if (sectionState[id]) return;
+  sectionState[id] = true;
+  const link = document.querySelector('nav a[data-section="'+id+'"]');
+  if (link) link.classList.add('done');
+  updateProgress();
+}
+
+function updateProgress(){
+  const done = SECTIONS.filter(s => sectionState[s]).length;
+  const pct = Math.round((done / SECTIONS.length) * 100);
+  document.getElementById('globalProgress').style.width = pct + '%';
+  document.getElementById('progressLabel').textContent = pct;
+}
+
+document.querySelectorAll('#exercises .exercise button').forEach(btn => {
+  btn.addEventListener('click', () => markSectionDone('exercises'));
+});
+document.querySelectorAll('#listening button').forEach(btn => {
+  btn.addEventListener('click', () => markSectionDone('listening'));
+});
+document.querySelector('#speaking button')?.addEventListener('click', () => markSectionDone('service'));
+
+/* ---------- EXERCISES ---------- */
+function checkEx1(){
+  const v=document.getElementById('ex1').value;
+  setFeedback('ex1fb',v==='ANVISA','Correct! ANVISA regulates pharmaceutical products in Brazil.');
+  if(v!=='ANVISA') document.getElementById('ex1fb').textContent='🔴 Try again. ANVISA is the health regulatory agency.';
+  markSectionDone('exercises');
+}
+function checkEx2(){
+  const v=document.getElementById('ex2').value;
+  setFeedback('ex2fb',v==='Operability','Correct! HAZOP = Hazard and Operability Study.');
+  if(v!=='Operability') document.getElementById('ex2fb').textContent='🔴 Try again. The full name is Hazard and Operability Study.';
+  markSectionDone('exercises');
+}
+function checkEx3(){
+  const v=document.getElementById('ex3').value;
+  setFeedback('ex3fb',v==='FISPQ','Correct! FISPQ is the Safety Data Sheet.');
+  if(v!=='FISPQ') document.getElementById('ex3fb').textContent='🔴 Try again. FISPQ contains hazard and emergency information.';
+  markSectionDone('exercises');
+}
+function checkEx4(){
+  const v=document.getElementById('ex4').value;
+  setFeedback('ex4fb',v==='root cause','Correct! Root cause analysis identifies the underlying problem.');
+  if(v!=='root cause') document.getElementById('ex4fb').textContent='🔴 Try again. We perform a root cause analysis.';
+  markSectionDone('exercises');
+}
+function checkEx5(){
+  const v=document.getElementById('ex5').value.trim().toLowerCase().replace(/[.!?]+$/,'').replace(/\s+/g,' ');
+  const ok=v==='i have five years of experience';
+  setFeedback('ex5fb',ok,'Correct! I have five years of experience.');
+  if(!ok) document.getElementById('ex5fb').textContent='🔴 Try again. Start with the subject: “I”.';
+  markSectionDone('exercises');
+}
+function checkEx6(){
+  const v=document.getElementById('ex6').value.trim().toLowerCase().replace(/[.!?]+$/,'').replace(/\s+/g,' ');
+  const ok=v==='i work with regulatory compliance and process safety' || v==="i work with regulatory compliance and process safety.";
+  setFeedback('ex6fb',ok,'Correct! I work with regulatory compliance and process safety.');
+  if(!ok) document.getElementById('ex6fb').textContent='🔴 Try again. Use “work with” + areas.';
+  markSectionDone('exercises');
+}
+
+/* ---------- LISTENING ---------- */
+function speakListening(){
+  if(!('speechSynthesis' in window)){
+    alert('Seu navegador não oferece reprodução de voz neste momento.');
+    return;
+  }
+  const text="Interviewer: Good morning. Thank you for coming. Could you tell me about yourself? Candidate: Good morning. My name is Carla. I am a pharmacist with six years of experience in quality assurance and regulatory affairs. I have worked with ANVISA submissions, GMP compliance, and deviation investigations. Interviewer: Very good. What do you know about our company? Candidate: I know your company is a multinational pharmaceutical manufacturer operating in Brazil. You have a strong focus on safety and sustainability. I believe my experience with FISPQ documentation and emergency response plans would be valuable here. Interviewer: How do you handle a customer complaint about a product? Candidate: I document the complaint immediately and start a root cause analysis. I coordinate with the quality team and keep the customer informed throughout the process. We implement a CAPA to prevent recurrence. Interviewer: Why do you want to work for us? Candidate: I admire your commitment to innovation and continuous improvement. I want to grow professionally in a company that values safety and compliance. I am also eager to work with international teams. Interviewer: Do you have any questions for us? Candidate: Yes. How do you integrate ANVISA and IBAMA requirements into your daily operations? And what is the biggest challenge your team is facing right now?";
+  const u=new SpeechSynthesisUtterance(text);
+  u.lang='en-US'; u.rate=.88;
+  speechSynthesis.cancel(); speechSynthesis.speak(u);
+  markSectionDone('listening');
+}
+function toggleTranscript(){
+  const t=document.getElementById('transcript');
+  t.style.display=t.style.display==='block'?'none':'block';
+  markSectionDone('listening');
+}
+function checkListening(){
+  let score=0;
+  if(document.getElementById('l1').value==='Pharmacist') score++;
+  if(document.getElementById('l2').value==='Six') score++;
+  if(document.getElementById('l3').value==='ANVISA') score++;
+  if(document.getElementById('l4').value==='FISPQ') score++;
+  if(document.getElementById('l5').value==='Document the complaint') score++;
+  if(document.getElementById('l6').value==='The quality team') score++;
+  if(document.getElementById('l7').value==='CAPA') score++;
+  if(document.getElementById('l8').value==='Commitment to innovation and safety') score++;
+  if(document.getElementById('l9').value==='ANVISA and IBAMA requirements') score++;
+  if(document.getElementById('l10').value==='The biggest challenge the team faces') score++;
+  const ok=score===10;
+  const msg=ok?'Excellent! 10/10 correct.':'You got '+score+'/10. Review the transcript and try again.';
+  setFeedback('lfb',ok,msg);
+  markSectionDone('listening');
+}
+
+/* ---------- SPEAKING ---------- */
+function saveSpeaking(){
+  const box=document.getElementById('speakingNotes');
+  const fb=document.getElementById('speakFb');
+  if(box.value.trim().length<10){
+    setFeedback('speakFb',false,'Write a few sentences first, then practice speaking them aloud.');
+  }else{
+    setFeedback('speakFb',true,'Great! Now read your sentences aloud and try to speak without looking.');
+    localStorage.setItem('englishVclassInterviewSpeaking',box.value);
+  }
+  markSectionDone('service');
+}
+
+/* ---------- QUIZ (RANDOMIZED) ---------- */
+const baseQuestions=[
+ {q:'Which agency regulates pharmaceutical products in Brazil?',a:['IBAMA','ANVISA','MAPA','ABIQUIM'],c:1,e:'ANVISA regulates pharmaceuticals.'},
+ {q:'What does HAZOP stand for?',a:['Hazard and Operation','Hazard and Operability','Health and Safety','Hazard and Optimization'],c:1,e:'HAZOP = Hazard and Operability Study.'},
+ {q:'What is FISPQ?',a:['Emergency Plan','Safety Data Sheet','Quality Certificate','Production Report'],c:1,e:'FISPQ is the Safety Data Sheet (SDS).'},
+ {q:'What does CAPA stand for?',a:['Corrective and Preventive Action','Chemical Analysis Protocol','Customer Assistance Program','Compliance Audit Procedure'],c:0,e:'CAPA = Corrective and Preventive Action.'},
+ {q:'Which agency handles environmental licensing?',a:['ANVISA','IBAMA','MAPA','ABNT'],c:1,e:'IBAMA handles environmental licensing.'},
+ {q:'What is the first step when handling a customer complaint?',a:['Refund the customer','Document the complaint','Call the manager','Ignore it'],c:1,e:'Document the complaint first.'},
+ {q:'What is GMP?',a:['General Manufacturing Protocol','Good Manufacturing Practices','Global Market Product','Government Monitoring Plan'],c:1,e:'GMP = Good Manufacturing Practices.'},
+ {q:'What is PAE?',a:['Production Analysis Estimate','Emergency Response Plan','Product Approval Evaluation','Process Audit Examination'],c:1,e:'PAE = Emergency Response Plan.'},
+ {q:'Which technique precedes HAZOP in risk analysis?',a:['APR','CAPA','SDS','GMP'],c:0,e:'APR (Preliminary Risk Analysis) precedes HAZOP.'},
+ {q:'What does the STAR method help with?',a:['Chemical analysis','Answering behavioural questions','Equipment calibration','Safety training'],c:1,e:'STAR helps structure behavioural interview answers.'}
+];
+
+let questions = [];
+let quizScore=0;
+let answered=0;
+
+function shuffle(arr){
+  const a=[...arr];
+  for(let i=a.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [a[i],a[j]]=[a[j],a[i]];
+  }
+  return a;
+}
+
+function buildQuestions(){
+  questions = shuffle(baseQuestions).map(q => {
+    const pairs = q.a.map((text, idx) => ({text, correct: idx === q.c}));
+    const shuffledPairs = shuffle(pairs);
+    const newOptions = shuffledPairs.map(p => p.text);
+    const newCorrect = shuffledPairs.findIndex(p => p.correct);
+    return { q: q.q, a: newOptions, c: newCorrect, e: q.e };
+  });
+}
+
+function renderQuiz(){
+  buildQuestions();
+  const c=document.getElementById('quizContainer');
+  c.innerHTML='';
+  questions.forEach((item,i)=>{
+    const box=document.createElement('div');
+    box.className='exercise';
+    box.innerHTML='<h3>Question '+(i+1)+'</h3><p><strong>'+item.q+'</strong></p>';
+    item.a.forEach((ans,j)=>{
+      const b=document.createElement('button');
+      b.className='option';
+      b.textContent=String.fromCharCode(65+j)+') '+ans;
+      b.onclick=()=>answerQuiz(i,j,box);
+      box.appendChild(b);
+    });
+    const f=document.createElement('div');
+    f.className='feedback';
+    f.id='qfb'+i;
+    box.appendChild(f);
+    c.appendChild(box);
+  });
+  updateScore();
+}
+
+function answerQuiz(i,j,box){
+  const buttons=box.querySelectorAll('.option');
+  if([...buttons].some(b=>b.disabled)) return;
+  buttons.forEach(b=>b.disabled=true);
+  const correct=j===questions[i].c;
+  buttons[j].classList.add(correct?'correct':'wrong');
+  if(!correct) buttons[questions[i].c].classList.add('correct');
+  if(correct) quizScore++;
+  answered++;
+  const fb=document.getElementById('qfb'+i);
+  fb.className='feedback '+(correct?'correct':'wrong');
+  fb.textContent=(correct?'🟢 Correct! ':'🔴 Not quite. ')+questions[i].e;
+  updateScore();
+  if(answered===10) markSectionDone('quiz');
+}
+
+function updateScore(){
+  document.getElementById('score').textContent=quizScore+' / 10';
+  const msg=document.getElementById('scoreMessage');
+  if(answered===0) msg.textContent='Complete o quiz para ver seu resultado.';
+  else if(answered<10) msg.textContent='Keep going! '+answered+' of 10 answered.';
+  else if(quizScore===10) msg.textContent='🏆 Excellent! Perfect score!';
+  else if(quizScore>=8) msg.textContent='👏 Great job! Review the questions you missed.';
+  else if(quizScore>=6) msg.textContent='👍 Good start! Review the lesson and try again.';
+  else msg.textContent='📚 Keep practicing. Review the lesson and restart the quiz.';
+}
+
+function restartQuiz(){
+  quizScore=0; answered=0; renderQuiz();
+  document.getElementById('quiz').scrollIntoView({behavior:'smooth'});
+}
+
+renderQuiz();
+
+/* ---------- INTERSECTION OBSERVER for first sections ---------- */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.id;
+      if (['objetivos','questions','vocab','regulators','safety','service'].includes(id)) markSectionDone(id);
+    }
+  });
+}, { threshold: 0.35 });
+['objetivos','questions','vocab','regulators','safety','service'].forEach(id => {
+  const el = document.getElementById(id);
+  if (el) observer.observe(el);
+});
+
+const saved=localStorage.getItem('englishVclassInterviewSpeaking');
+if(saved) document.getElementById('speakingNotes').value=saved;
+
+updateProgress();
+</script>
+
+</body>
+</html>
